@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       const typedword = word.value.trim();
 
-      if (typedword.length < 6 || !/[A-Z]/.test(typedword.slice(0, 7))) {
+      if (typedword.length < 6 || !/[A-Z]/.test(typedword.slice(0, 6))) {
         alert(
-          "Please enter a word with at least 6 characters and at least one uppercase letter.",
+          "Please enter a word with at least 6 characters and one uppercase letter in the first 6 characters.",
         );
         return;
       } else {
