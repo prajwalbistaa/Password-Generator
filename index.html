@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(to bottom, #88e1fa, #fbbaf4);
+        background-attachment: fixed;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10rem;
+        margin-left: 30%;
+        min-height: 20rem;
+        height: auto;
+        width: 35rem;
+        gap: 10px;
+        background-color: #fcf8f83c;
+        border-radius: 30px;
+        box-shadow: 0px 0px 10px 0px #dcdddd6e;
+      }
+      #label {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #333;
+        margin-top: 0px;
+      }
+      #password {
+        width: 60%;
+        padding: 10px;
+        font-size: 1rem;
+        color: #333;
+        border: 1px solid #333;
+        border-radius: 10px;
+        margin-top: 0px;
+        background-color: transparent;
+      }
+      #generate,
+      #generate1 {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(to right, #07c2f6, #02d0fa);
+        color: white;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+      }
+      #generate:hover,
+      #generate1:hover {
+        transform: scale(1.02);
+        box-shadow: 0px 0px 2px 0px #02d0fa;
+      }
+      #or {
+        font-size: 25px;
+        font-weight: 600;
+        color: #333;
+      }
+      #password-list {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        gap: 8px;
+        margin: 10px 0 20px;
+      }
+      .password-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #fcf8f83c;
+      }
+      .generated-password {
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        color: #333;
+      }
+      .password-action {
+        padding: 6px 10px;
+        border: none;
+        border-radius: 7px;
+        background-color: #fcf8f83c;
+        color: #333;
+        cursor: pointer;
+      }
+      .password-action:hover {
+        background-color: #ffffff66;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2 id="label" for="password">Password Generator</h2>
+      <input
+        type="text"
+        id="password"
+        name="password"
+        placeholder="Type word you want to include"
+      />
+      <button id="generate">Generate Password</button>
+      <div id="or">OR</div>
+      <button id="generate1">Generate Random Password</button>
+      <div id="password-list" aria-live="polite"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
