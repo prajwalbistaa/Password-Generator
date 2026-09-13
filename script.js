@@ -44,24 +44,26 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       const typedword = word.value.trim();
 
-      if (typedword.length < 6) {
-        alert("Please enter a word with at least 6 characters.");
+      if (typedword.length < 6 || !/[A-Z]/.test(typedword)) {
+        alert(
+          "Please enter a word with at least 6 characters and at least one uppercase letter.",
+        );
         return;
       } else {
         const characters = "0123456789!@#$%^&*()";
         let passphrase = "";
         passphrase = typedword.slice(0, 3);
 
-      for (let i = 0; i < 2; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        passphrase += characters[randomIndex];
-      }
-      passphrase += typedword.slice(3, 6);
+        for (let i = 0; i < 2; i++) {
+          const randomIndex = Math.floor(Math.random() * characters.length);
+          passphrase += characters[randomIndex];
+        }
+        passphrase += typedword.slice(3, 6);
 
-      for (let i = 0; i < 2; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        passphrase += characters[randomIndex];
-      }
+        for (let i = 0; i < 2; i++) {
+          const randomIndex = Math.floor(Math.random() * characters.length);
+          passphrase += characters[randomIndex];
+        }
         addPasswordToList(passphrase);
       }
     });
